@@ -1,0 +1,4 @@
+
+banners = {
+    'main': 'AgACAgIAAxkDAAMvZsIQo1V5THd8haBWP7uO1vrweoQAAn7kMRt93xFKR6x8CDeNPNsBAAMCAANzAAM1BA',
+}
