@@ -7,7 +7,7 @@ from aiogram.client.default import DefaultBotProperties
 
 from dotenv import load_dotenv, find_dotenv
 
-from handlers.start_handler import user_router
+from handlers.user_router import user_router
 
 load_dotenv(find_dotenv()) #загружаем переменные из файла.env
 
