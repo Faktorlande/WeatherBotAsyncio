@@ -29,9 +29,6 @@ async def menu_for_weather_now(level: int, menu_name: str):
     return image, keyboards
 
 
-async def get_forecast_city():
-    return f"Введите название города"
-
 
 # Отдельная функция для опеределния какое меню выводить
 # Вызывается в user_roter при команде /start. При команде старт уже заданы level=0 menu='main'#
@@ -48,5 +45,5 @@ async def get_menu_content(
     else:
         if menu_name == 'forecast_geo':
             return await menu_pass(level, menu_name)
-        elif menu_name == 'forecast_city':
-            return await get_forecast_city()
+        # elif menu_name == 'forecast_city':
+        #     return await get_forecast_city()

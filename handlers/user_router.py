@@ -7,7 +7,7 @@ from aiogram.fsm.state import State, StatesGroup
 from keyboards.inline_keyboards import MenuCallBack
 
 from handlers.menu_processing import get_menu_content
-from utils.work_with_API import get_weather
+from utils.work_with_API import get_forecast
 
 user_router = Router()
 
@@ -25,8 +25,11 @@ async def cmd_start(message: Message):
 @user_router.message(GetForecastCityName.city_name)
 async def get_forecast_city(message: Message, state: FSMContext):
     await state.clear()
-    get_weather(message.text)
-    await message.answer(f"Ваш город: {message.text}")
+    data_forecast = get_forecast(message.text)
+    forecast_str = ''
+    for data in data_forecast:
+        forecast_str += f"{data}: {data_forecast[data]}\n"
+    await message.answer(f"Город: {message.text}"+'\n'+forecast_str)
 
 
 @user_router.callback_query(MenuCallBack.filter(F.menu_name == 'forecast_city'))
