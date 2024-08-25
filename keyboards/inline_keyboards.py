@@ -35,7 +35,7 @@ def get_user_buttons_weather_now(*, level: int, sizes: tuple[int] = (2, 1)):
     for text, menu_name in btns.items():
         if menu_name == 'forecast_geo':
             keyboard.add(InlineKeyboardButton(text=text,
-                                          callback_data=MenuCallBack(level=None, menu_name=menu_name).pack()))
+                                              callback_data=MenuCallBack(level=None, menu_name=menu_name).pack()))
         elif menu_name == 'forecast_city':
             keyboard.add(InlineKeyboardButton(text=text,
                                               callback_data=MenuCallBack(level=None, menu_name=menu_name).pack()))

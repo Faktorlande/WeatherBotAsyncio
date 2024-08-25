@@ -44,6 +44,6 @@ async def get_menu_content(
         return await menu_pass(level, menu_name)
     else:
         if menu_name == 'forecast_geo':
-            return await menu_pass(level, menu_name)
+            return await menu_pass(level, menu_name) #TODO: Определить геолокацию пользователя
         # elif menu_name == 'forecast_city':
         #     return await get_forecast_city()
